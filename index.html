@@ -3,95 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XIS CRICKET | International Shop</title>
+    <title>XIS CRICKET | International English Willow Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { background-color: #ffffff; color: #111; font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { background-color: #ffffff; color: #1a1a1a; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
-        /* Product Card Glow Effects on Hover */
-        .card-kinetic:hover { border-color: #00e5ff; box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15); }
-        .card-promax:hover { border-color: #ff3d00; box-shadow: 0 10px 30px rgba(255, 61, 0, 0.15); }
-        .card-neonic:hover { border-color: #39ff14; box-shadow: 0 10px 30px rgba(57, 255, 20, 0.15); }
+        .product-card { transition: all 0.3s ease-in-out; border: 1px solid #f3f4f6; }
         
-        .product-image { transition: transform 0.5s ease; }
-        .group:hover .product-image { transform: scale(1.05); }
+        /* Interactive Brand Colors for the 3 Editions */
+        .hover-kinetic:hover { border-color: #00e5ff; box-shadow: 0 10px 25px -5px rgba(0, 229, 255, 0.2); }
+        .hover-promax:hover { border-color: #ff4500; box-shadow: 0 10px 25px -5px rgba(255, 69, 0, 0.2); }
+        .hover-neonic:hover { border-color: #32cd32; box-shadow: 0 10px 25px -5px rgba(50, 205, 50, 0.2); }
+
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #00e5ff; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
 <body>
 
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="flex items-center">
-                <img src="logo.png" alt="XIS Logo" class="h-12 w-auto">
-            </a>
+    <nav class="bg-white sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0">
+                    <img src="logo.png" alt="XIS CRICKET" class="h-14 md:h-20 w-auto">
+                </div>
 
-            <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-widest text-gray-500">
-                <a href="#kinetic" class="hover:text-cyan-500 transition">Kinetic</a>
-                <a href="#promax" class="hover:text-orange-600 transition">Pro Max</a>
-                <a href="#neonic" class="hover:text-green-500 transition">Neonic</a>
-                <a href="#willow" class="hover:text-black transition">Willow Grades</a>
+                <div class="hidden md:flex space-x-10 text-[11px] font-extrabold uppercase tracking-[0.2em] text-gray-500">
+                    <a href="#kinetic" class="nav-link hover:text-black">Kinetic</a>
+                    <a href="#promax" class="nav-link hover:text-black">Pro Max</a>
+                    <a href="#neonic" class="nav-link hover:text-black">Neonic</a>
+                    <a href="#willow" class="nav-link hover:text-black">Willow Grades</a>
+                </div>
+
+                <div class="flex items-center">
+                    <a href="https://wa.me/923328339111?text=I%20am%20interested%20in%20an%20XIS%20Cricket%20Bat" class="bg-black text-white text-[10px] px-6 py-3 font-bold uppercase tracking-widest hover:bg-[#00e5ff] hover:text-black transition duration-300">
+                        WhatsApp Shop
+                    </a>
+                </div>
             </div>
-
-            <a href="https://wa.me/92XXXXXXXXXX" class="bg-black text-white text-[10px] px-6 py-3 font-bold uppercase tracking-tighter hover:bg-cyan-500 transition">
-                Order Workshop Direct
-            </a>
         </div>
     </nav>
 
-    <section class="max-w-7xl mx-auto py-20 px-6">
-        <div class="grid md:grid-cols-3 gap-8">
+    <main class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-sm font-bold tracking-[0.4em] text-gray-400 uppercase mb-2">2026 Collection</h2>
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl uppercase">The Armory</h1>
+        </div>
+
+        <div class="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3">
             
-            <div class="group border border-gray-100 rounded-xl overflow-hidden card-kinetic transition-all duration-300">
-                <div class="bg-gray-50 p-10 relative flex justify-center overflow-hidden">
-                    <img src="kinetic-bat.jpg" alt="Kinetic Edition" class="h-80 w-auto object-contain product-image">
-                    <span class="absolute top-4 left-4 bg-[#00e5ff] text-white text-[10px] px-3 py-1 font-black uppercase">Kinetic</span>
+            <div id="kinetic" class="product-card hover-kinetic rounded-lg overflow-hidden group bg-white">
+                <div class="aspect-w-4 aspect-h-5 bg-gray-50 flex justify-center p-8">
+                    <img src="kinetic-bat.jpg" alt="Kinetic" class="h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                 </div>
                 <div class="p-6 text-center">
-                    <h3 class="text-xl font-black uppercase italic mb-2">Kinetic Edition</h3>
-                    <p class="text-gray-400 text-xs mb-4">Aerodynamic Power • Cyan Edition</p>
-                    <div class="flex justify-center gap-2 mb-6 text-[10px] font-bold">
-                        <span class="bg-gray-100 px-2 py-1 rounded">PLAYERS: 100k</span>
-                        <span class="bg-gray-100 px-2 py-1 rounded">PRO: 50k</span>
+                    <h3 class="text-lg font-bold uppercase italic">Kinetic <span class="text-[#00e5ff]">Edition</span></h3>
+                    <p class="mt-1 text-xs text-gray-500 uppercase tracking-widest">Aerodynamic / Cyan</p>
+                    <div class="mt-6 border-t border-gray-100 pt-6">
+                        <div class="flex flex-col gap-2">
+                            <a href="https://wa.me/923328339111?text=Inquiry:%20Kinetic%20Players%20Grade" class="border py-2 text-[11px] font-black hover:bg-gray-50 transition">Players Grade: 100k</a>
+                            <a href="https://wa.me/923328339111?text=Inquiry:%20Kinetic%20Pro%20Grade" class="border py-2 text-[11px] font-black hover:bg-gray-50 transition">Pro Grade: 50k</a>
+                        </div>
                     </div>
-                    <a href="https://wa.me/92XXXXXXXXXX" class="block w-full border border-black py-3 text-[11px] font-bold uppercase hover:bg-black hover:text-white transition">Select Quality</a>
                 </div>
             </div>
 
-            <div class="group border border-gray-100 rounded-xl overflow-hidden card-promax transition-all duration-300">
-                <div class="bg-gray-50 p-10 relative flex justify-center overflow-hidden">
-                    <img src="promax-bat.jpg" alt="Pro Max Edition" class="h-80 w-auto object-contain product-image">
-                    <span class="absolute top-4 left-4 bg-[#ff3d00] text-white text-[10px] px-3 py-1 font-black uppercase">Pro Max</span>
+            <div id="promax" class="product-card hover-promax rounded-lg overflow-hidden group bg-white">
+                <div class="aspect-w-4 aspect-h-5 bg-gray-50 flex justify-center p-8">
+                    <img src="promax-bat.jpg" alt="Pro Max" class="h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                 </div>
                 <div class="p-6 text-center">
-                    <h3 class="text-xl font-black uppercase italic mb-2">Pro Max Edition</h3>
-                    <p class="text-gray-400 text-xs mb-4">Maximum Profile • Orange Edition</p>
-                    <div class="flex justify-center gap-2 mb-6 text-[10px] font-bold">
-                        <span class="bg-gray-100 px-2 py-1 rounded">PLAYERS: 100k</span>
-                        <span class="bg-gray-100 px-2 py-1 rounded">PRO: 50k</span>
+                    <h3 class="text-lg font-bold uppercase italic">Pro Max <span class="text-[#ff4500]">Edition</span></h3>
+                    <p class="mt-1 text-xs text-gray-500 uppercase tracking-widest">Power Monster / Red</p>
+                    <div class="mt-6 border-t border-gray-100 pt-6">
+                        <div class="flex flex-col gap-2">
+                            <a href="https://wa.me/923328339111?text=Inquiry:%20Pro%20Max%20Players%20Grade" class="border py-2 text-[11px] font-black hover:bg-gray-50 transition">Players Grade: 100k</a>
+                            <a href="https://wa.me/923328339111?text=Inquiry:%20Pro%20Max%20Pro%20Grade" class="border py-2 text-[11px] font-black hover:bg-gray-50 transition">Pro Grade: 50k</a>
+                        </div>
                     </div>
-                    <a href="https://wa.me/92XXXXXXXXXX" class="block w-full border border-black py-3 text-[11px] font-bold uppercase hover:bg-[#ff3d00] hover:text-white hover:border-[#ff3d00] transition">Select Quality</a>
                 </div>
             </div>
 
-            <div class="group border border-gray-100 rounded-xl overflow-hidden card-neonic transition-all duration-300">
-                <div class="bg-gray-50 p-10 relative flex justify-center overflow-hidden">
-                    <img src="neonic-bat.jpg" alt="Neonic Edition" class="h-80 w-auto object-contain product-image">
-                    <span class="absolute top-4 left-4 bg-[#39ff14] text-white text-[10px] px-3 py-1 font-black uppercase">Neonic</span>
+            <div id="neonic" class="product-card hover-neonic rounded-lg overflow-hidden group bg-white">
+                <div class="aspect-w-4 aspect-h-5 bg-gray-50 flex justify-center p-8">
+                    <img src="neonic-bat.jpg" alt="Neonic" class="h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                 </div>
                 <div class="p-6 text-center">
-                    <h3 class="text-xl font-black uppercase italic mb-2">Neonic Edition</h3>
-                    <p class="text-gray-400 text-xs mb-4">Total Control • Lime Edition</p>
-                    <div class="flex justify-center gap-2 mb-6 text-[10px] font-bold">
-                        <span class="bg-gray-100 px-2 py-1 rounded">PLAYERS: 100k</span>
-                        <span class="bg-gray-100 px-2 py-1 rounded">PRO: 50k</span>
+                    <h3 class="text-lg font-bold uppercase italic">Neonic <span class="text-[#32cd32]">Edition</span></h3>
+                    <p class="mt-1 text-xs text-gray-500 uppercase tracking-widest">Ultimate Balance / Green</p>
+                    <div class="mt-6 border-t border-gray-100 pt-6">
+                        <div class="flex flex-col gap-2">
+                            <a href="https://wa.me/923328339111?text=Inquiry:%20Neonic%20Players%20Grade" class="border py-2 text-[11px] font-black hover:bg-gray-50 transition">Players Grade: 100k</a>
+                            <a href="https://wa.me/923328339111?text=Inquiry:%20Neonic%20Pro%20Grade" class="border py-2 text-[11px] font-black hover:bg-gray-50 transition">Pro Grade: 50k</a>
+                        </div>
                     </div>
-                    <a href="https://wa.me/92XXXXXXXXXX" class="block w-full border border-black py-3 text-[11px] font-bold uppercase hover:bg-[#39ff14] hover:text-white hover:border-[#39ff14] transition">Select Quality</a>
                 </div>
             </div>
 
         </div>
-    </section>
+    </main>
+
+    <footer class="bg-gray-50 py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">© 2026 XIS CRICKET INTERNATIONAL | Workshop Direct Sales</p>
+            <p class="text-[10px] text-gray-400 mt-2 italic uppercase">+92 332 8339111</p>
+        </div>
+    </footer>
 
 </body>
 </html>
